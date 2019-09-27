@@ -16,11 +16,12 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: SSH into instance and deploy docker image
         uses: appleboy/ssh-action@v0.0.2
         with:
           args: >
-            --host ${{ secrets.AWS_INSTANCE_IP_ADDRESS }} --user ec2-user --password ${{ secrets.AWS_EB_FRESHWORKS_KEY }}
+            --host ${{ secrets.AWS_INSTANCE_IP_ADDRESS }} --user ec2-user --ssh-key ${{ secrets.AWS_EB_FRESHWORKS_KEY }}
             --script 'whoami'
             --script 'ls -la'
