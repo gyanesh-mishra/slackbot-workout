@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: SSH into instance and deploy docker image
-        uses: appleboy/ssh-action@v0.0.2
+      - uses: appleboy/ssh-action@v0.0.2
         args:
           [
             "--host",
