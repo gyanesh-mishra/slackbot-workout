@@ -1,0 +1,12 @@
+name: Trigger the workout bot every Friday at 9:01 AM
+on:
+  schedule:
+    - cron: 01 16 * * Fri
+jobs:
+  trigger-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: wei/curl@master
+      - name: Check if the site is running
+        with:
+          args: ${{ secrets.AWS_INSTANCE_IP_ADDRESS }}:5000
