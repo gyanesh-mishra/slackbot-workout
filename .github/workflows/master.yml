@@ -17,8 +17,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: appleboy/ssh-action@v0.0.2
       - name: SSH into instance and deploy docker image
+        uses: appleboy/ssh-action@v0.0.2
         env:
           PRIVATE_KEY: ${{ secrets.AWS_EB_FRESHWORKS_KEY }}
           HOST: ${{ secrets.AWS_INSTANCE_IP_ADDRESS }}
