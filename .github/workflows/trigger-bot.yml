@@ -4,7 +4,7 @@ jobs:
   trigger-bot:
     runs-on: ubuntu-latest
     steps:
-      - uses: wei/curl@master
       - name: Check if the site is running
+        uses: wei/curl@v1.1.1
         with:
           args: ${{ secrets.AWS_INSTANCE_IP_ADDRESS }}:5000
