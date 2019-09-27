@@ -32,4 +32,4 @@ jobs:
             --script 'if [ -x "$(command -v docker)" ]; then echo "Docker already installed"; else sudo yum install -y docker; fi'
             --script 'sudo docker pull gyaneshm/slackbot-workout:latest'
             --script 'sudo docker rm -f freshworkout || true'
-            --script 'sudo docker run -p 5000:5000 --env SLACK_URL_TOKEN_STRING --env SLACK_USER_TOKEN_STRING --env SLACK_VERIFICATION_TOKEN --name freshworkout gyaneshm/slackbot-workout'
+            --script 'sudo docker run -d -p 5000:5000 --env SLACK_URL_TOKEN_STRING --env SLACK_USER_TOKEN_STRING --env SLACK_VERIFICATION_TOKEN --name freshworkout gyaneshm/slackbot-workout'
