@@ -1,0 +1,14 @@
+*.pyc
+
+log*.csv
+log*.csv_DEBUG
+user_cache.save
+
+.venv/
+.DS_Store
+.idea/
+__pycache__
+*.pytest_cache
+*.pyc
+.vscode
+

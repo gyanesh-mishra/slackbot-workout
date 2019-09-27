@@ -1,0 +1,90 @@
+{
+  "teamDomain": "freshworks",
+  "channelName": "fresh_workout",
+  "channelId": "CJ6NF75KQ",
+
+  "officeHours": {
+    "on": true,
+    "begin": 16,
+    "end": 23
+  },
+
+  "debug": false,
+
+  "callouts": {
+    "timeBetween": {
+      "minTime": 25,
+      "maxTime": 45,
+      "units": "minutes"
+    },
+    "numPeople": 8,
+    "slidingWindowSize": 8,
+    "groupCalloutChance": 0.1
+  },
+
+  "exercises": [
+    {
+      "id": 0,
+      "name": "planks",
+      "minReps": 30,
+      "maxReps": 60,
+      "units": "second"
+    },
+    {
+      "id": 1,
+      "name": "pushups",
+      "minReps": 10,
+      "maxReps": 30,
+      "units": "rep"
+    },
+    {
+      "id": 2,
+      "name": "wall sit",
+      "minReps": 30,
+      "maxReps": 60,
+      "units": "second"
+    },
+    {
+      "id": 3,
+      "name": "squats",
+      "minReps": 15,
+      "maxReps": 30,
+      "units": "rep"
+    },
+    {
+      "id": 4,
+      "name": "calf raises",
+      "minReps": 10,
+      "maxReps": 30,
+      "units": "rep"
+    },
+    {
+      "id": 5,
+      "name": "front/back lunges",
+      "minReps": 5,
+      "maxReps": 15,
+      "units": "rep"
+    },
+    {
+      "id": 6,
+      "name": "side lunges",
+      "minReps": 5,
+      "maxReps": 15,
+      "units": "rep"
+    },
+    {
+      "id": 7,
+      "name": "sitting (oblique) twists",
+      "minReps": 10,
+      "maxReps": 30,
+      "units": "rep"
+    },
+    {
+      "id": 8,
+      "name": "chest squeezes",
+      "minReps": 10,
+      "maxReps": 30,
+      "units": "rep"
+    }
+  ]
+}
