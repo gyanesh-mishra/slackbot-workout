@@ -27,6 +27,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             self.send_response(403)
             self.end_headers()
             self.wfile.write(response.getvalue())
+            return
 
         if "stop" in body:
             response.write(b'Workout lottery stopped')
