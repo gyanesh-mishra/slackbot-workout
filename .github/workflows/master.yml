@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: SSH into instance and deploy docker image
       - uses: appleboy/ssh-action@v0.0.2
-        args:
+        run:
           [
             "--host",
             "${{ secrets.AWS_INSTANCE_IP_ADDRESS }}",
