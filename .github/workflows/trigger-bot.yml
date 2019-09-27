@@ -1,7 +1,5 @@
 name: Trigger the workout bot every Friday at 9:01 AM
-on:
-  schedule:
-    - cron: 01 16 * * Fri
+on: [push]
 jobs:
   trigger-bot:
     runs-on: ubuntu-latest
