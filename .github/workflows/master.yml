@@ -20,8 +20,11 @@ jobs:
     steps:
       - name: SSH into instance and deploy docker image
         uses: appleboy/ssh-action@v0.0.2
+        env:
+          KEY: ${{ secrets.AWS_EB_FRESHWORKS_KEY }}
+          HOST: ${{ secrets.AWS_INSTANCE_IP_ADDRESS }}
         with:
           args: >
-            --host ${{ secrets.AWS_INSTANCE_IP_ADDRESS }} --user ec2-user --ssh-key "${{ secrets.AWS_EB_FRESHWORKS_KEY }}"
+            --user 'ec2-user'
             --script 'whoami'
             --script 'ls -la'
