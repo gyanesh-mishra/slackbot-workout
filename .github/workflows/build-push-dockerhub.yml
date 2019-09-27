@@ -1,0 +1,15 @@
+name: Deploy code to DockerHub
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Log into Docker hub
+      run: docker login --username ${{ secrets.DOCKER_HUB_USERNAME }} --password ${{ secrets.DOCKER_HUB_PASSWORD }}
+
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag slackbot-workout:latest
+      
+    - name: Push to docker hub
+      run: docker push slackbot-workout:latest
