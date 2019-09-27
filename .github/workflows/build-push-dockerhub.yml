@@ -9,7 +9,7 @@ jobs:
         run: docker login --username ${{ secrets.DOCKER_HUB_USERNAME }} --password ${{ secrets.DOCKER_HUB_PASSWORD }}
 
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag slackbot-workout:latest
+        run: docker build . --file Dockerfile --tag gyaneshm/slackbot-workout:latest
 
       - name: Push to docker hub
         run: docker push gyaneshm/slackbot-workout:latest
