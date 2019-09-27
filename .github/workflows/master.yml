@@ -13,12 +13,13 @@ jobs:
 
       - name: Push to docker hub
         run: docker push gyaneshm/slackbot-workout:latest
+
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: SSH into instance and deploy docker image
       - uses: appleboy/ssh-action@v0.0.2
-        run:
+      - name: SSH into instance and deploy docker image
+        with:
           [
             "--host",
             "${{ secrets.AWS_INSTANCE_IP_ADDRESS }}",
