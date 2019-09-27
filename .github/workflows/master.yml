@@ -1,4 +1,4 @@
-name: Deploy code to DockerHub
+name: Build and Deploy to PROD
 on: [push]
 jobs:
   build:
@@ -13,3 +13,19 @@ jobs:
 
       - name: Push to docker hub
         run: docker push gyaneshm/slackbot-workout:latest
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: SSH into instance and deploy docker image
+        uses: appleboy/ssh-action@v0.0.2
+        args:
+          [
+            "--host",
+            "${{ secrets.AWS_INSTANCE_IP_ADDRESS }}",
+            "--ssh-key",
+            "${{ secrets.AWS_EB_FRESHWORKS_KEY }}",
+            "--user",
+            "ec2-user",
+            "--script",
+            "'ls -al'",
+          ]
